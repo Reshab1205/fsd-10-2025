@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        color: black;
+        background: #c33764; /* fallback for old browsers */
+        background: -webkit-linear-gradient(
+          to right,
+          #1d2671,
+          #c33764
+        ); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(
+          to right,
+          #1d2671,
+          #c33764
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }
+
+      .btn-grad {
+        background-image: linear-gradient(
+          to right,
+          #2b5876 0%,
+          #4e4376 51%,
+          #2b5876 100%
+        );
+      }
+      .btn-grad {
+        margin: 10px;
+        padding: 15px 45px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;
+        box-shadow: 0 0 20px #eee;
+        border-radius: 10px;
+        display: block;
+      }
+
+      .btn-grad:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+      }
+      .container {
+        margin: 0;
+        border: 0;
+        padding: 0;
+      }
+
+      .d1 {
+        margin: 16px;
+        border: 5px;
+        padding: 15px;
+        background-color: white !important;
+        color: white;
+
+      }
+      .s1 {
+        margin: 16px;
+        border: 5px;
+        padding: 15px;
+        background-color: white;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button class="btn-grad">Login</button>\
+
+    <span style="background-color: white;">Lorem ipsum dolor sit amet.</span>
+
+    <div class="container">
+      <div class="d1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+        nostrum deserunt voluptas laborum quis aspernatur provident, totam
+        quaerat velit quae.
+      </div>
+      <div class="d2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+        nostrum deserunt voluptas laborum quis aspernatur provident, totam
+        quaerat velit quae.
+      </div>
+    </div>
+  </body>
+</html>

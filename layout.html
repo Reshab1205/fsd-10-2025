@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Designing & Understanding</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            outline: 1px solid blue;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            font-weight: bold;
+        }
+      body {
+        margin: 0;
+      }
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo-2000.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+      }
+      .box {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYvcV6QP-EahnBrtFbQOJSpAsNgOm9AW7_w&s");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100px;
+        width: 200px;
+        /* background: red; */
+        margin: 20px;
+        padding: 20px;
+        border: 2px solid blue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      img {
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+        <div>My Logo</div>
+        <nav>
+            <a href="https://www.google.com/" target="_blank">Google</a>
+            <a href="https://www.facebook.com/">Facebook</a>
+           
+        </nav>
+    </header>
+
+    <div class="container">
+      <div class="box">
+      </div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+      
+    </div>
+    <!-- <span class="box">Box 4</span> -->
+  </body>
+</html>
