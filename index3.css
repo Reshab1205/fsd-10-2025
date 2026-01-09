@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header, .footer {
+    padding: 16px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    position: sticky;
+}
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 100px);
+}
+
+.sidebar {
+    width: 25%;
+    background-color:#f4f4f4;
+    padding: 20px;
+}
+
+.content {
+    width: 75%;
+    padding: 20px;
+    flex: 1;
+}
+
+.ads {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}

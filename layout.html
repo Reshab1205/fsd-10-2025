@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Layout Designing & Understanding</title>
     <style>
-        * {
-            box-sizing: border-box;
-            outline: 1px solid blue;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: medium;
-            font-weight: bold;
-        }
+      * {
+        box-sizing: border-box;
+        /* outline: 1px solid blue; */
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: medium;
+        font-weight: bold;
+      }
       body {
         margin: 0;
       }
@@ -20,10 +20,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url("https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo-2000.png");
+        /* background-image: url("https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo-2000.png"); */
         background-repeat: no-repeat;
         background-size: cover;
-        
       }
       .box {
         background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxYvcV6QP-EahnBrtFbQOJSpAsNgOm9AW7_w&s");
@@ -44,25 +43,35 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 16px 32px;
+        background-color: aquamarine;
+        top: 0;
+      }
+      .nav-links a {
+        margin-right: 20px;
+      }
     </style>
   </head>
   <body>
-    <header>
-        <div>My Logo</div>
-        <nav>
-            <a href="https://www.google.com/" target="_blank">Google</a>
-            <a href="https://www.facebook.com/">Facebook</a>
-           
-        </nav>
+    <header class="navbar">
+      <div class="logo">MyLogo</div>
+
+      <nav class="nav-links">
+        <a href="https://www.google.com/" target="_blank">Google</a>
+        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://www.facebook.com/">Facebook</a>
+      </nav>
     </header>
 
     <div class="container">
-      <div class="box">
-      </div>
+      <div class="box">Box 1</div>
       <div class="box">Box 2</div>
       <div class="box">Box 3</div>
-      
     </div>
-    <!-- <span class="box">Box 4</span> -->
   </body>
 </html>
