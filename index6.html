@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #p1 {
+            display: block;
+            background-color: red;
+            /* visibility: visible; */
+        }
+
+        .card {
+            display: block;
+            height: 50vh;
+            width: 300px;
+            background-color: aqua;
+        }
+        #img1 {
+            visibility: visible;;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="display()">Click</button>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, sunt.</p>
+
+    <div class="card">
+        <img id="img1" src="assessts/download (2).jpg">
+        <button onclick="removeImage()">RemoveImage</button>
+    </div>
+
+    <div class="card">
+        <img id="img2" src="assessts/download (2).jpg">
+        <button onclick="changeImage()">ChangeImage</button>
+    </div>
+</body>
+<script>
+    // document.getElementById('p1').style.display = 'block'
+    function display() {
+    const data = document.getElementById('p1');
+    if(data.style.display === 'block') {
+        data.style.display = 'none'
+    } else {
+        data.style.display = 'block'
+    }
+    }
+    function changeImage() {
+        const data = document.getElementById('img2')
+        .getAttribute('src', 'assessts/download (2).jpg')
+        if(data === 'assessts/download (2).jpg') {
+            document.getElementById('img2')
+            .setAttribute('src', 'https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=')  
+        } else {
+            document.getElementById('img2').setAttribute('src', 'assessts/download (2).jpg')
+        }
+
+    }
+
+    function removeImage() {
+        if(document.getElementById('img1').style.visibility === 'visible') {
+            document.getElementById('img1').style.visibility = 'hidden'
+        } else {
+            document.getElementById('img1').style.visibility = 'visible'
+        }
+    }
+
+  
+</script>
+</html>
