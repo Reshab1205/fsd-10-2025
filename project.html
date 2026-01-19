@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="project.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">My Heading</div>
+    <div class="main">
+      <div class="sidebar">
+        <div class="tab">HTML Part 1</div>
+        <div class="tab">CSS</div>
+        <div class="tab">JS</div>
+        <div class="tab">React</div>
+        <div class="tab">NodeJs</div>
+        <div class="tab">Express</div>
+        <div class="tab">NestJs</div>
+        <div class="tab">MongoDb</div>
+        <div class="tab">PostgreSql</div>
+        <div class="tab">Vue.Js</div>
+      </div>
+      <div id="content" class="content">Main Content</div>
+    </div>
+    <div class="footer">My Footer</div>
+  </body>
+  <script>
+    let items = document.querySelectorAll(".tab");
+
+    let data = document.getElementById("content");
+
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        const value = item.textContent;
+
+        data.textContent = value;
+      });
+    });
+  </script>
+</html>
