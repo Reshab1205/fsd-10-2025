@@ -23,12 +23,12 @@
     min-height: calc(100vh - 115px);
 }
 
-/* .sidebar {
+.sidebar {
     display: flex;
     width: 21%;
     background-color: #92ef1f;
     flex-direction: column;
-} */
+}
 
 .tab {
     margin: 10px;

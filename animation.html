@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        @keyframes move {
+            from {
+                transform: translateX(20px);
+            }
+            to {
+                transform: translateX(-20px);
+            }
+        }
+        .box {
+            background: red;
+            height: 100px;
+            width: 100px;
+            /* transition: background 2s ease-in-out */
+            animation: move 2s infinite;
+        }
+        .box:hover {
+            background: green;
+        }
+        .box1 {
+            background: blue;
+            height: 100px;
+            width: 100px;
+            /* transition: background 2s ease-in-out */
+            animation: spin 2s infinite;
+        }
+        .box1:hover {
+            background: hotpink;
+        }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        .box2 {
+            background: blue;
+            height: 100px;
+            width: 100px;
+        }
+        .box2:hover {
+            background: hotpink;
+            transform: scale(1.2);
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>
