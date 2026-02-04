@@ -12,14 +12,12 @@
 // const c = true
 // const d = [1,2,3,4]
 
-
 // console.log(a)
 // console.log(b)
 // console.log(c)
 // console.log(d)
 
 // console.log(a,b,c,d)
-
 
 // var a = 16
 // var a = 10
@@ -39,5 +37,115 @@
 // // const c = 12;
 // console.log(c)
 
+// const data = 5;
+// let x;
+
+// function something() {
+// let c = 10 ;
+// data = c
+  
+// }
+
+// c
+
+// function doit() {
+//     console.log(x)
+// }
 
 
+
+// const a = 'Reshab'
+// const b = 'Kumar'
+// const c = a - b;
+// console.log(c)
+
+// const a = ''
+// const d = "Kumar"
+// const e = `Sah`
+// const b = 10.76
+// const c = true
+// let g = null;
+// let y = g;
+// let x = y
+
+// const data = String('Reshab')
+// const num = Number('Reshab')
+
+// console.log(typeof(num))
+// console.log(num)
+
+// const a = NaN
+// console.log(typeof(a))
+
+
+// const x = 10;
+
+// const y = 12;
+
+// if(x <= y) {
+//     console.log('Hello')
+// } else {
+//     console.log('BYe')
+// }
+
+// const data = prompt('Enter the value : ')
+// console.log(data)
+
+// 1) Positive or Negative: Write a program that takes a number and prints 
+// whether it is "positive," "negative," or "zero".
+// 2)  Even or Odd: Use the remainder operator (%) to determine
+//  if a number is even or odd.
+// 3) Voting Eligibility: Create a script that checks
+//  if a person's age is 18 or older. If so, print "Old enough to vote!";
+//  otherwise, print "Not old enough to vote.".
+// 4) Greater of Two: Write a script that compares 
+// two numbers and logs the larger value to the console.
+// 5) Passing Grade: Define a variable score. 
+// If the score is 50 or higher, print "Passed"; otherwise, print "Failed". 
+
+// O+ --> 90 to 100
+// A+ --> 85 to 90
+// A --> 80 to 85
+// B+ --> 75 to 80
+// B ---> 70 to 75
+// C+ --> 65 to 70
+// C --> 60 to 65
+// D+ --> 55 to 60
+// D --> 50 to 55
+// E --> less than 50
+
+// less than 0  --> Enter correct Value 
+
+const data = prompt('Enter the number')
+
+if(data > 90 && data <=100) {
+    console.log('O+')
+} else if(data > 85 && data <=90) {
+    console.log('A+')
+} else if(data > 80 && data <=85) {
+    console.log('A')
+} else if(data > 75 && data <=80) {
+    console.log('B+')
+} else if(data > 70 && data <=75) {
+    console.log('B')
+} else if(data > 65 && data <=70) {
+    console.log('C+')
+} else if(data > 60 && data <=65) {
+    console.log('C')
+} else if(data > 55 && data <=60) {
+    console.log('D+')
+} else if(data > 50 && data <=55) {
+    console.log('D')
+} else if (data <= 50 && data >= 0) {
+    console.log('Fail')
+} else {
+    console.log('Enter correct value')
+}
+
+// if(data > 0) {
+//     console.log('Positive')
+// } else if (data == 0) {
+//     console.log('Zero')
+// } else {
+//     console.log('Negative')
+// }
