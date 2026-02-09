@@ -43,7 +43,7 @@
 // function something() {
 // let c = 10 ;
 // data = c
-  
+
 // }
 
 // c
@@ -51,8 +51,6 @@
 // function doit() {
 //     console.log(x)
 // }
-
-
 
 // const a = 'Reshab'
 // const b = 'Kumar'
@@ -77,7 +75,6 @@
 // const a = NaN
 // console.log(typeof(a))
 
-
 // const x = 10;
 
 // const y = 12;
@@ -91,17 +88,17 @@
 // const data = prompt('Enter the value : ')
 // console.log(data)
 
-// 1) Positive or Negative: Write a program that takes a number and prints 
+// 1) Positive or Negative: Write a program that takes a number and prints
 // whether it is "positive," "negative," or "zero".
 // 2)  Even or Odd: Use the remainder operator (%) to determine
 //  if a number is even or odd.
 // 3) Voting Eligibility: Create a script that checks
 //  if a person's age is 18 or older. If so, print "Old enough to vote!";
 //  otherwise, print "Not old enough to vote.".
-// 4) Greater of Two: Write a script that compares 
+// 4) Greater of Two: Write a script that compares
 // two numbers and logs the larger value to the console.
-// 5) Passing Grade: Define a variable score. 
-// If the score is 50 or higher, print "Passed"; otherwise, print "Failed". 
+// 5) Passing Grade: Define a variable score.
+// If the score is 50 or higher, print "Passed"; otherwise, print "Failed".
 
 // O+ --> 90 to 100
 // A+ --> 85 to 90
@@ -114,33 +111,33 @@
 // D --> 50 to 55
 // E --> less than 50
 
-// less than 0  --> Enter correct Value 
+// less than 0  --> Enter correct Value
 
-const data = prompt('Enter the number')
+// const data = prompt('Enter the number')
 
-if(data > 90 && data <=100) {
-    console.log('O+')
-} else if(data > 85 && data <=90) {
-    console.log('A+')
-} else if(data > 80 && data <=85) {
-    console.log('A')
-} else if(data > 75 && data <=80) {
-    console.log('B+')
-} else if(data > 70 && data <=75) {
-    console.log('B')
-} else if(data > 65 && data <=70) {
-    console.log('C+')
-} else if(data > 60 && data <=65) {
-    console.log('C')
-} else if(data > 55 && data <=60) {
-    console.log('D+')
-} else if(data > 50 && data <=55) {
-    console.log('D')
-} else if (data <= 50 && data >= 0) {
-    console.log('Fail')
-} else {
-    console.log('Enter correct value')
-}
+// if(data > 90 && data <=100) {
+//     console.log('O+')
+// } else if(data > 85 && data <=90) {
+//     console.log('A+')
+// } else if(data > 80 && data <=85) {
+//     console.log('A')
+// } else if(data > 75 && data <=80) {
+//     console.log('B+')
+// } else if(data > 70 && data <=75) {
+//     console.log('B')
+// } else if(data > 65 && data <=70) {
+//     console.log('C+')
+// } else if(data > 60 && data <=65) {
+//     console.log('C')
+// } else if(data > 55 && data <=60) {
+//     console.log('D+')
+// } else if(data > 50 && data <=55) {
+//     console.log('D')
+// } else if (data <= 50 && data >= 0) {
+//     console.log('Fail')
+// } else {
+//     console.log('Enter correct value')
+// }
 
 // if(data > 0) {
 //     console.log('Positive')
@@ -149,3 +146,115 @@ if(data > 90 && data <=100) {
 // } else {
 //     console.log('Negative')
 // }
+
+// console.log(arr.length)
+// const str = ["Reshab", "Kumar"]
+// const mix = [1,2,"Reshab", true]
+
+// i = 0
+// i = i + 1
+
+// for(let i = 0; i < arr.length; i++) {
+//     console.log(arr[i])
+// }
+
+// for(let i = arr1.length - 1; i >= 0; i--) {
+//     console.log(arr1[i])
+// }
+
+//     const arr = [1,2,3,4,5]
+// // const arr1 = ["Reshab", "Kumar", 27, "Vaishali", "Bihar", 844125]
+
+// arr.forEach((item) => {
+//      item = item * 2
+//     console.log(item)
+// })
+// for(x in arr1) {
+//     console.log('x', x)
+// }
+
+// for(y of arr1) {
+//     console.log('y', y)
+// }
+
+// const arr = [1,2,3,4,5]
+
+// for(let i = arr.length - 1; i >= 0; i--) {
+//     console.log(arr[i])
+// }
+
+// for(let i in arr) {
+//     console.log(arr[i])
+// }
+
+// for( let i of arr) {
+//     console.log(i)
+// }
+
+// arr.forEach((item) => {
+//     console.log(item)
+// })
+
+// const msg = 'Hello'
+
+// for(i = 0; i < 5; i++) {
+//     console.log(msg)
+// }
+
+// const arr1 = ["Kumar", "Ravi", 27, true]
+// const arr = ["Reshab", "Kumar", 27, true]
+
+// console.log(arr[2])
+
+// const data = [1,2,3, "Reshab", {fname: "Reshab", lname: "Kumar", age:27, isActive:true}]
+// console.log(data)
+// console.log(typeof(arr))
+// console.log(typeof(obj))
+
+// const age = 27
+// age = 28
+// console.log(age)
+
+// const ar = [1,2,3,4,5]
+// ar[2] = 9
+// console.log(ar)
+// obj.age = 28
+// console.log(obj)
+
+// for(i in obj) {
+//     console.log(i)
+// }
+
+// for(i in obj) {
+//     console.log(obj[i])
+// }
+
+
+
+
+// function add(a,b) {
+//     const c = a + b;
+//     console.log(c)
+//    return add(5,6) dont try this 
+// }
+// add()
+
+
+// const fname = "Reshab"
+
+// const data = `Hello ${fname}`
+// console.log(data)
+
+
+const obj = {
+  fname: "Reshab",
+  lname: "Kumar",
+  age: 27,
+  isActive: true,
+  hello: function greet() { 
+    console.log(`Hello ${obj.fname + " " + obj.lname} 
+        my age is ${obj.age} and is it ${obj.isActive}`)
+  }
+};
+// console.log(obj.fname)
+obj.hello()
