@@ -246,15 +246,89 @@
 // console.log(data)
 
 
-const obj = {
+// const obj = {
+//   fname: "Reshab",
+//   lname: "Kumar",
+//   age: 27,
+//   isActive: true,
+//   hello: function greet() { 
+//     console.log(`Hello ${obj.fname + " " + obj.lname} 
+//         my age is ${obj.age} and is it ${obj.isActive}`)
+//   }
+// };
+// console.log(obj.fname)
+// obj.hello()
+
+// const obj = {
+//   fname: "Reshab",
+//   lname: "Kumar",
+//   age: 27,
+//   isActive: false,
+//   hello: function greet() { 
+//     console.log(`Hello ${this.fname + " " + this.lname} 
+//         my age is ${this.age} and is it ${this.isActive}`)
+//   },
+//   getFullName: function fullName() {
+//     console.log(this.fname + this.lname)
+//   }
+// };
+
+
+
+// // console.log(typeof(obj[keys]))
+// for(i in obj) {
+//   if(typeof(obj[i]) !== 'function' && typeof(obj[i]) !== 'boolean') {
+//     console.log(obj[i])
+//   }
+// }
+
+// for( i in obj) {
+//   if( typeof(obj[i]) === 'string') {
+//     console.log(i)
+//   }
+// }
+
+// obj.hello()
+
+// function hii(name, age) {
+//   console.log(name + " " + age) 
+// }
+
+// hii(obj.fname, obj.age)
+
+
+// console.log(obj.getFullName)
+// for(i in obj) {
+//   console.log(i)
+// }
+
+
+
+const obj = new Object({
   fname: "Reshab",
   lname: "Kumar",
   age: 27,
-  isActive: true,
+  isActive: false,
   hello: function greet() { 
-    console.log(`Hello ${obj.fname + " " + obj.lname} 
-        my age is ${obj.age} and is it ${obj.isActive}`)
+    console.log(`Hello ${this.fname + " " + this.lname} 
+        my age is ${this.age} and is it ${this.isActive}`)
+  },
+  getFullName: function fullName() {
+    console.log(this.fname + this.lname)
   }
-};
-// console.log(obj.fname)
-obj.hello()
+})
+
+
+// Object.seal(obj)
+// obj.isActive = true
+obj.city = "Bhopal"
+
+console.log(Object.isSealed(obj))
+// console.log(obj)
+
+
+
+
+
+
+// console.log(obj)
