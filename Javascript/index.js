@@ -304,31 +304,75 @@
 
 
 
-const obj = new Object({
-  fname: "Reshab",
-  lname: "Kumar",
-  age: 27,
-  isActive: false,
-  hello: function greet() { 
-    console.log(`Hello ${this.fname + " " + this.lname} 
-        my age is ${this.age} and is it ${this.isActive}`)
-  },
-  getFullName: function fullName() {
-    console.log(this.fname + this.lname)
-  }
-})
+// const obj = new Object({
+//   fname: "Reshab",
+//   lname: "Kumar",
+//   age: 27,
+//   isActive: false,
+//   hello: function greet() { 
+//     console.log(`Hello ${this.fname + " " + this.lname} 
+//         my age is ${this.age} and is it ${this.isActive}`)
+//   },
+//   getFullName: function fullName() {
+//     console.log(this.fname + this.lname)
+//   }
+// })
 
 
 // Object.seal(obj)
 // obj.isActive = true
-obj.city = "Bhopal"
+// obj.city = "Bhopal"
 
-console.log(Object.isSealed(obj))
+// console.log(Object.isSealed(obj))
+// console.log(obj)
+
 // console.log(obj)
 
 
+// create an obj where it will store fname, 
+// lname , greeting msg and create a function 
+// inside obj which will display greet msg 
 
+// const x = 'Reshab'
 
+// console.log(`Hello, How are you ${x} `)
 
+const obj = {
+  fname: "Reshab",
+  lname: "Kumar",
+  msg: "Thank You for Coming",
+  isActive:true,
+  greet: function sayGreet() {
+    // c = 
+    console.log(`${this.fname}  ${this.lname}, ${this.msg}`)
+  },
+  hello: function sayHello() {
+    console.log('Hello')
+  },
+  isSeal: false
+}
 
+for( let i in obj) {
+  if(typeof(obj[i]) !== 'function') {
+    console.log('first iteration',i)
+    if(typeof(obj[i]) !== 'boolean') {
+      console.log(i)
+    }
+  }
+}
+
+// for( let i in obj) {
+//   if(typeof(obj[i]) !== 'function' && typeof(obj[i]) !== 'boolean') {
+//       console.log(i)
+//   }
+// }
+
+// console.log(obj.fname)
+// Object.freeze(obj)
+// Object.seal(obj)
+// obj.city = 'Vaishali'
 // console.log(obj)
+
+// const x = Object.values(obj)
+// console.log(x)
+
