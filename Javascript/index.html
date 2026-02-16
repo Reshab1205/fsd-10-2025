@@ -6,13 +6,39 @@
     <title>Document</title>
   </head>
   <body>
-    <p>Hello</p>
+    <input id="num1" type="number" />
+    <input id="num2" type="number" />
+
+    <button onclick="add()">ADD</button>
+    <button onclick="sub()">Sub</button>
+    <button onclick="mul()">Mul</button>
+    <button onclick="div()">Div</button>
+
+    <p id="result"></p>
     <script>
-      const arr1 = ["Kumar", "Ravi", 27, true];
-      const obj = { fname: "Reshab", lname: "Kumar", age: 27, isActive: true };
-      console.log(arr1);
-      console.log(obj);
-      document.title = 'My Webpage'
+      function add() {
+        const a = parseFloat(document.getElementById("num1").value);
+        const b = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").innerText = a + b;
+      }
+
+      function sub() {
+        const a = parseFloat(document.getElementById("num1").value);
+        const b = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").innerText = a - b;
+      }
+
+      function mul() {
+        const a = parseFloat(document.getElementById("num1").value);
+        const b = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").innerText = a * b;
+      }
+
+      function div() {
+        const a = parseFloat(document.getElementById("num1").value);
+        const b = parseFloat(document.getElementById("num2").value);
+        document.getElementById("result").innerText = a / b;
+      }
     </script>
   </body>
 </html>

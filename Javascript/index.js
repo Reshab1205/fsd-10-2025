@@ -337,29 +337,29 @@
 
 // console.log(`Hello, How are you ${x} `)
 
-const obj = {
-  fname: "Reshab",
-  lname: "Kumar",
-  msg: "Thank You for Coming",
-  isActive:true,
-  greet: function sayGreet() {
-    // c = 
-    console.log(`${this.fname}  ${this.lname}, ${this.msg}`)
-  },
-  hello: function sayHello() {
-    console.log('Hello')
-  },
-  isSeal: false
-}
+// const obj = {
+//   fname: "Reshab",
+//   lname: "Kumar",
+//   msg: "Thank You for Coming",
+//   isActive:true,
+//   greet: function sayGreet() {
+//     // c = 
+//     console.log(`${this.fname}  ${this.lname}, ${this.msg}`)
+//   },
+//   hello: function sayHello() {
+//     console.log('Hello')
+//   },
+//   isSeal: false
+// }
 
-for( let i in obj) {
-  if(typeof(obj[i]) !== 'function') {
-    console.log('first iteration',i)
-    if(typeof(obj[i]) !== 'boolean') {
-      console.log(i)
-    }
-  }
-}
+// for( let i in obj) {
+//   if(typeof(obj[i]) !== 'function') {
+//     console.log('first iteration',i)
+//     if(typeof(obj[i]) !== 'boolean') {
+//       console.log(i)
+//     }
+//   }
+// }
 
 // for( let i in obj) {
 //   if(typeof(obj[i]) !== 'function' && typeof(obj[i]) !== 'boolean') {
