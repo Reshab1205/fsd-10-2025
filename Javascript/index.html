@@ -16,27 +16,36 @@
 
     <p id="result"></p>
     <script>
-      function add() {
-        const a = parseFloat(document.getElementById("num1").value);
-        const b = parseFloat(document.getElementById("num2").value);
+
+      let a,b
+
+      function data() {
+         a = parseFloat(document.getElementById("num1").value);
+         b = parseFloat(document.getElementById("num2").value);    
+      }
+
+      const add = () => {
+        data()
         document.getElementById("result").innerText = a + b;
       }
 
       function sub() {
-        const a = parseFloat(document.getElementById("num1").value);
-        const b = parseFloat(document.getElementById("num2").value);
+       data()
         document.getElementById("result").innerText = a - b;
       }
 
+      function sub() {
+        data()
+        document.getElementById("result").innerText = a + b;
+      }
+
       function mul() {
-        const a = parseFloat(document.getElementById("num1").value);
-        const b = parseFloat(document.getElementById("num2").value);
+       data()
         document.getElementById("result").innerText = a * b;
       }
 
       function div() {
-        const a = parseFloat(document.getElementById("num1").value);
-        const b = parseFloat(document.getElementById("num2").value);
+       data()
         document.getElementById("result").innerText = a / b;
       }
     </script>

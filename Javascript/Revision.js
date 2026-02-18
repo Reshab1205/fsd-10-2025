@@ -44,3 +44,23 @@
 // } else {
 //     console.log('Bye')
 // }
+
+const arr = ["Apple", "Ball", "Cat", "Dog", "Elephant"]
+// console.log(arr.length)
+
+// console.log(arr[0])
+
+// for(let i = arr.length - 1; i >= 0; i--) {
+//     console.log(arr[i])
+// }
+
+// for(let i of arr) {
+//     console.log(i)
+// }
+
+// forof
+
+
+// arr.forEach((data, index) => {
+//     console.log(data, index)
+// })

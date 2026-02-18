@@ -36,6 +36,10 @@
 const x = parseInt(prompt("Enter first value: "));
 const y = parseInt(prompt("Enter 2nd value: "));
 
+// const add = () => {
+
+// }
+
 function add(a, b) {
   return a + b;
 }
