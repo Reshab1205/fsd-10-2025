@@ -78,13 +78,49 @@
 // }
 // ]
 
-function EmiCalculator(amt, int, time) {
-  const intAmt = (amt * int * 1) / 100 
-  const totalInt = intAmt * time
-  const totalAmt = amt + totalInt
-  const totalMonths = time * 12;
-  const emi = totalAmt / totalMonths;
-  return emi
-}
+// function EmiCalculator(amt, int, time) {
+//   const intAmt = (amt * int * 1) / 100 
+//   const totalInt = intAmt * time
+//   const totalAmt = amt + totalInt
+//   const totalMonths = time * 12;
+//   const emi = totalAmt / totalMonths;
+//   return emi
+// }
 
-console.log(EmiCalculator(1000000, 10, 10))
+// console.log(EmiCalculator(1000000, 10, 10))
+
+// function salaryBonus(salary, bonusPer) {
+//   const bonus = (salary * bonusPer) / 100
+//   return totalAmt = salary + bonus
+// }
+
+// console.log(salaryBonus(50000, 20))
+
+
+
+const arr = [1,2,3,4,5,6];
+// const arr1 = [6,7,8,9,10];
+
+const d = arr.push(7)
+console.log(d)
+console.log(arr)
+
+const data = arr.map(item => {
+  return item * 2
+})
+
+
+
+
+// console.log(arr)
+// console.log(data)
+
+// console.log(arr.fill(2, 3, 5))
+// console.log(arr.at(5))
+// console.log(arr1.concat(arr))
+// console.log(arr.copyWithin(0,2,3))
+// console.log(arr.copyWithin(1,3))
+
+
+// console.log(arr.)
+// console.log(typeof(arr))
