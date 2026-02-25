@@ -98,16 +98,21 @@
 
 
 
-const arr = [1,2,3,4,5,6];
-// const arr1 = [6,7,8,9,10];
+// const arr = [1,2,3,4,5,6];
+// // const arr1 = [6,7,8,9,10];
+// console.log(arr[5])
 
-const d = arr.push(7)
-console.log(d)
-console.log(arr)
+// for(let i = 0; i < arr.length; i++) {
+//   console.log(arr[i])
+// }
 
-const data = arr.map(item => {
-  return item * 2
-})
+// const d = arr.push(7)
+// console.log(d)
+// console.log(arr)
+
+// const data = arr.map(item => {
+//   return item * 2
+// })
 
 
 
@@ -124,3 +129,20 @@ const data = arr.map(item => {
 
 // console.log(arr.)
 // console.log(typeof(arr))
+
+const arr = [1,2,1,3,5,2,5,7,8,3]
+let arr1 = []
+for(let i = 0; i < arr.length; i++) {
+let check = true
+  for(let j = i+1; j < arr.length; j++) {
+      if(arr[i] === arr[j]) {
+        check = false
+      }
+  }
+  if(check == true) {
+    arr1.push(arr[i])
+  }
+}
+
+console.log(arr1)
+//[1,3,2,5]
