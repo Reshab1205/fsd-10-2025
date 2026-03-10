@@ -130,19 +130,114 @@
 // console.log(arr.)
 // console.log(typeof(arr))
 
-const arr = [1,2,1,3,5,2,5,7,8,3]
-let arr1 = []
-for(let i = 0; i < arr.length; i++) {
-let check = true
-  for(let j = i+1; j < arr.length; j++) {
-      if(arr[i] === arr[j]) {
-        check = false
-      }
-  }
-  if(check == true) {
-    arr1.push(arr[i])
-  }
-}
+// const arr = [1,-2,-1,3,5,2,5,7,8,-3, "Apple", true]
 
-console.log(arr1)
+// arr.forEach(item => {
+//   if( typeof(item) === 'number' && item > 0) {
+//     console.log(item)
+//   }
+// })
+
+// arr.forEach((a,i) => {
+//   console.log(a, i)
+// })
+// let arr1 = []
+// for(let i = 0; i < arr.length; i++) {
+// let check = true
+//   for(let j = i+1; j < arr.length; j++) {
+//       if(arr[i] === arr[j]) {
+//         check = false
+//       }
+//   }
+//   if(check == true) {
+//     arr1.push(arr[i])
+//   }
+// }
+
+// console.log(arr1)
 //[1,3,2,5]
+
+// const arr = [1,2,[3,4,[5,6,[7,8]]]]
+
+// [1,2]
+// [],
+// [3,4],
+// [],
+// [5,6],
+// [],
+// [7,8]
+// []
+
+// const a = [1,2,3]
+// const b = [4,5,6]
+// const c = [...a] + "," + [...b]
+// console.log(typeof(c))
+
+// function flatArray(arr) {
+//   let res = []
+
+//   for(i of arr) {
+//     if(Array.isArray(i)) {
+//       res.push(...flatArray(i))
+//     } else {
+//       res.push(i)
+//     }
+//   }
+// return res
+// }
+
+// console.log(flatArray(arr))
+// console.log(arr.flat())
+// [1,2,3,4,5,6,7,8]
+
+// let obj = {
+//   name: "Reshab",
+//   age: 27,
+//   address: {
+//     village: "Matiara Tok",
+//     po:"Sarai",
+//     city: "Vaishali",
+//     state: "Bihar"
+//   },
+//   hobby: "Teaching",      // make a function which would fetch all keys( nested obj also) inside the obj 
+//   skills : {
+//     frontend: {
+//       skill_1: "HTML",
+//       skill_2: "CSS",
+//       skill_3: "JS",
+//       skill_4: "React",
+//       skill_5: "NextJS",
+//       component: {
+//         project: "EMI calculator",
+//         summary: {
+//           emi: "Calc EMi",
+//           data: {
+//             hello: 'Hello'
+//           }
+//         }
+//       }
+//     },
+//     backend: {
+//       skill_5: "NodeJs",
+//       skill_6: "Express",
+//       skill_7: "NestJS"
+//     },
+//     db: "MongoDb"
+//   }
+// }
+
+// function fetchKeys(a) {
+//   for(i in a) {
+//     if( typeof a[i] == 'object') {
+//       // console.log(i)
+//       fetchKeys(a[i])
+//     } else {
+//       console.log(i)
+//     }
+    
+//   }
+// }
+
+// fetchKeys(obj)
+
+

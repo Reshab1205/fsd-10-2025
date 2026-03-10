@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <p></p>
+        </div>
+        
+            <p></p>
+        
+       
+    </div>
+    <p id="p1"></p>
+    <p id="p2">Bye</p>
+    <input id="i1" type="date" placeholder="Enter"/>
+        <input id="i2" type="range" placeholder="Enter"/>
+    <button onclick="fetchDate()" >Click</button>
+    <script>
+        function fetchDate() {
+            console.log(document.getElementById('i2').value)
+        }
+        document.getElementById('p1').innerText = 'Hiii'
+        console.log(document.getElementById('p2').textContent)
+    </script>
+</body>
+</html>

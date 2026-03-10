@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="d1">
+      <h1 id="h1" class="d1">F10</h1>
+      <p class="d1">Lorem ipsum dolor sit amet.</p>
+      <p class="d1">Lorem ipsum dolor sit amet consectetur.</p>
+      <p id="p2"></p>
+      <p id="p3"></p>
+    </div>
+    <p id="p1">Hello</p>
+    <img
+      id="img1"
+      alt="photo"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFYqoKTu_o3Zns2yExbst2Co84Gpc2Q1RJbA&s"
+    />
+
+    <button onclick="changeHeading()">Click to change Heading</button>
+
+    <script>
+        const arr = ['Bhopal', 'Indore', 'Ujjain', 'Gwalior']
+      function changeHeading() {
+
+        
+        // if (document.getElementById("h1").textContent === "Bhopal") {
+        //   document.getElementById("h1").textContent = "F10";
+        // } else {
+        //   document.getElementById("h1").textContent = "Bhopal";
+        // }
+      }
+
+
+      //    console.log(typeof(document.getElementById('p1').innerText = 56))
+      // console.log(document.getElementById('img1'))
+      // console.log(document.getElementsByClassName('d1'))
+      // const data = document.getElementsByClassName('d1')
+      // for( i in data) {
+      //     console.log(data[0])
+      // }
+
+      // document.onkeypress('ctrl')
+      document.getElementById("p2").innerHTML = `
+    <span>I am Reshab</span>
+    `;
+
+      document.getElementById("p3").textContent = "Bhopal";
+      console.log(document.getElementById("h1").textContent);
+    </script>
+  </body>
+</html>
