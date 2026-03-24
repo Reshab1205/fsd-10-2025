@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="d1">
-      <h1 id="h1" class="d1">F10</h1>
+      <h1 id="h1" class="d1"></h1>
       <p class="d1">Lorem ipsum dolor sit amet.</p>
       <p class="d1">Lorem ipsum dolor sit amet consectetur.</p>
       <p id="p2"></p>
@@ -22,17 +22,26 @@
 
     <button onclick="changeHeading()">Click to change Heading</button>
 
+    <h1>Question:- Create a input and button and onclick of the button it should fetch value from input and display in list</h1>
+
     <script>
         const arr = ['Bhopal', 'Indore', 'Ujjain', 'Gwalior']
-      function changeHeading() {
+        let i = 0
+        function changeHeading() {
+         document.getElementById('h1').innerText = arr[i]
+         i++
 
-        
+         if(i >= arr.length) {
+          i = 0
+         }
+        }
+
         // if (document.getElementById("h1").textContent === "Bhopal") {
         //   document.getElementById("h1").textContent = "F10";
         // } else {
         //   document.getElementById("h1").textContent = "Bhopal";
         // }
-      }
+      
 
 
       //    console.log(typeof(document.getElementById('p1').innerText = 56))
@@ -44,12 +53,13 @@
       // }
 
       // document.onkeypress('ctrl')
-      document.getElementById("p2").innerHTML = `
-    <span>I am Reshab</span>
-    `;
+    //   document.getElementById("p2").innerHTML = `
+    // <span>I am Reshab</span>
+    // `;
 
-      document.getElementById("p3").textContent = "Bhopal";
-      console.log(document.getElementById("h1").textContent);
+    //   document.getElementById("p3").textContent = "Bhopal";
+    //   console.log(document.getElementById("h1").textContent);
+    
     </script>
   </body>
 </html>

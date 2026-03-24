@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="i1" />
+    <button onclick="addList()" >AddTodo</button>
+    <h3>Todos:- </h3>
+    <ul id="li">
+    </ul>
+    <script>
+        function addList() {
+            const pEl = document.getElementById('li')
+            const data = document.getElementById('i1').value
+            const li = document.createElement("li")
+            const editBtn = document.createElement('button')
+            const delBtn = document.createElement('button')
+            editBtn.textContent = 'Edit'
+            delBtn.textContent = 'Delete'
+            editBtn.onclick = function () {
+               const newData =  prompt('Enter new Data')
+               li.textContent = newData             
+            }
+            delBtn.onclick = function () {
+                pEl.removeChild(li)
+            }
+            li.textContent = data
+            li.appendChild(editBtn)
+            li.appendChild(delBtn)
+            pEl.appendChild(li)
+            document.getElementById('i1').value = ""
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inp" type="text" placeholder="Enter Your Todo here ..." />
+    <button onclick="addTodo()">Add Todo</button>
+    <h2 id="h2">Todos :- </h2>
+    <!-- <p id="demo"></p> -->
+    <ul id="El">
+        <!-- <li></li> -->
+    </ul>
+
+    <script>
+        function addTodo() {
+          const todo = document.getElementById('inp').value
+          if(todo.trim() === "") {
+            alert("Please Write Something")
+            return
+          }
+          const li = document.createElement('li')
+          li.textContent = todo
+          const editBTn = document.createElement('button')
+          editBTn.textContent = "Edit"
+          const delBTn = document.createElement('button')
+          delBTn.textContent = 'Delete'
+          delBTn.onclick = function () {
+            ul.removeChild(li)
+          }
+          const ul = document.getElementById('El')
+          ul.appendChild(li)
+          li.appendChild(editBTn)
+          li.appendChild(delBTn)
+          document.getElementById('inp').value = ""
+        }
+    </script>
+</body>
+</html>
