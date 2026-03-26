@@ -15,26 +15,46 @@
     </ul>
 
     <script>
+
+      let data = []
+      const ul = document.getElementById('El')
+      const li = document.createElement('li')
+      const editBTn = document.createElement('button')
+      const delBTn = document.createElement('button')
         function addTodo() {
           const todo = document.getElementById('inp').value
           if(todo.trim() === "") {
             alert("Please Write Something")
             return
           }
-          const li = document.createElement('li')
           li.textContent = todo
-          const editBTn = document.createElement('button')
+          data.push(todo)
+          localStorage.setItem('data', JSON.stringify(data))
           editBTn.textContent = "Edit"
-          const delBTn = document.createElement('button')
+          editBTn.onclick = function () {
+           const editData =  prompt('Enter your New Data');
+           if(editData.trim() !== "") {
+             li.firstChild.textContent = editData
+           }
+          }
           delBTn.textContent = 'Delete'
           delBTn.onclick = function () {
             ul.removeChild(li)
+            // li.remove 
           }
-          const ul = document.getElementById('El')
-          ul.appendChild(li)
-          li.appendChild(editBTn)
-          li.appendChild(delBTn)
+          // ul.appendChild(li)
+          // li.appendChild(editBTn)
+          // li.appendChild(delBTn)
           document.getElementById('inp').value = ""
+          displayTodo()
+        }
+
+        function displayTodo() {
+          const todoData = JSON.parse(localStorage.getItem('data'))
+          console.log(typeof todoData)
+          for(i in todoData) {
+            console.log(todoData[i])
+          }
         }
     </script>
 </body>
