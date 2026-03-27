@@ -17,6 +17,9 @@
     </ul>
 
     <script>
+      if(a == 2 && b ==3) {
+        console.log('True')
+      }
       let data = [];
       const ul = document.getElementById("El");
       function addTodo() {
@@ -26,16 +29,25 @@
           return;
         }
         data.push(todo);
+        console.log('data', data)
         localStorage.setItem("data", JSON.stringify(data));
         document.getElementById("inp").value = "";
         displayTodo();
       }
 
       function displayTodo() {
-        const todoData = JSON.parse(localStorage.getItem("data"));
-        const li = document.createElement("li");
-        for (i of todoData) {
-          li.textContent = i;
+        const todoData = JSON.parse(localStorage.getItem("data")) || [];
+        console.log(todoData)
+        // console.log(li)
+        const editBtn = document.createElement('button')
+        editBtn.textContent = 'Edit'
+        const delBtn = document.createElement('button')
+        delBtn.textContent = 'Delete'
+        for (let i =0; i < todoData.length; i++) {
+          const li = document.createElement("li");
+          li.textContent = todoData[i];
+          li.appendChild(editBtn)
+          li.appendChild(delBtn)
           ul.appendChild(li);
         }
       }
