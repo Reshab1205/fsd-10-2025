@@ -43,7 +43,7 @@ new Error
 //     console.log('Bye')
 // }
 
-const arr = ["Apple", "Ball", "Cat", "Dog", "Elephant"];
+// const arr = ["Apple", "Ball", "Cat", "Dog", "Elephant"];
 // console.log(arr.length)
 
 // console.log(arr[0])
@@ -79,11 +79,58 @@ const arr = ["Apple", "Ball", "Cat", "Dog", "Elephant"];
 //     console.log('false')
 // }
 
-const obj = {
-    fname: "Reshab",
-    lname: "Kumar"
-}
+// const obj = {
+//     fname: "Reshab",
+//     lname: "Kumar"
+// }
 
-for(i in obj) {
-    console.log(obj[i])
-}
+// for(i in obj) {
+//     console.log(obj[i])
+// }
+
+// var a = 9;
+// console.log(a)
+// a = 10;
+// console.log(a)
+
+// let b;
+// let b = 12;
+// console.log(b)
+// b = 16;
+// console.log(b)
+// const c = 14;
+// c = 18;
+// console.log(c)
+// var num = 16;
+// console.log(num)
+// var num = 20;
+// function add() {
+//     var num = 18;
+//     console.log(num)
+// }
+// add()
+
+// function add() {
+// console.log('hii')
+// }
+
+// const add = function () {
+//     console.log('Hello')
+// }
+
+// console.log('data',add())
+
+// function add() {
+
+// }
+
+
+// const add = () => {
+
+// }
+
+// function add() {
+// console.log('Hello')
+// }
+
+// add()

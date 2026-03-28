@@ -17,11 +17,8 @@
     </ul>
 
     <script>
-      if(a == 2 && b ==3) {
-        console.log('True')
-      }
-      let data = [];
-      const ul = document.getElementById("El");
+      
+      let data = JSON.parse(localStorage.getItem('data')) || [];
       function addTodo() {
         const todo = document.getElementById("inp").value;
         if (todo.trim() === "") {
@@ -29,29 +26,37 @@
           return;
         }
         data.push(todo);
-        console.log('data', data)
+        console.log(data)
         localStorage.setItem("data", JSON.stringify(data));
         document.getElementById("inp").value = "";
         displayTodo();
+        // data = []
       }
-
+      
       function displayTodo() {
         const todoData = JSON.parse(localStorage.getItem("data")) || [];
-        console.log(todoData)
-        // console.log(li)
+        const ul = document.getElementById("El");
         const editBtn = document.createElement('button')
         editBtn.textContent = 'Edit'
         const delBtn = document.createElement('button')
         delBtn.textContent = 'Delete'
         for (let i =0; i < todoData.length; i++) {
-          const li = document.createElement("li");
+          const li = document.createElement("li"); 
+          ul.innerHTML = ""
           li.textContent = todoData[i];
+          editBtn.onclick = function () {
+            const newData = prompt('Enter new todo')
+            if(newData.trim() !== "") {
+              localStorage.setItem('data', )
+              displayTodo()
+            }
+          }
           li.appendChild(editBtn)
           li.appendChild(delBtn)
           ul.appendChild(li);
         }
       }
-      displayTodo();
+     window.onload =  displayTodo;
     </script>
   </body>
 </html>
