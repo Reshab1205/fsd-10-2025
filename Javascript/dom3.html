@@ -7,13 +7,10 @@
   </head>
   <body>
     <input id="inp" type="text" placeholder="Enter Your Todo here ..." />
-    <!-- <input type="file" />
-    <input id="p1" type="range" /> -->
+  
     <button onclick="addTodo()">Add Todo</button>
     <h2 id="h2">Todos :-</h2>
-    <!-- <p id="demo"></p> -->
     <ul id="El">
-      <!-- <li></li> -->
     </ul>
 
     <script>
@@ -25,20 +22,24 @@
           alert("Please Write Something");
           return;
         }
-        data.push(todo);
+        data.push({todo:todo, completed:false});
         localStorage.setItem("data", JSON.stringify(data));
         document.getElementById("inp").value = "";
         displayTodo();
-        // data = []
       }
       
       function displayTodo() {
         const ul = document.getElementById("El");
         ul.innerHTML = ""
         for (let i =0; i < data.length; i++) {
+          const checkbox = document.createElement('input')
+          checkbox.type = 'checkbox'
+          // checkbox. 
+          
+
           const li = document.createElement("li"); 
           const span = document.createElement("span")
-          span.textContent = data[i]
+          span.textContent = data[i].todo
           const editBtn = document.createElement("button")
           editBtn.textContent = 'Edit'
           editBtn.onclick = function () {
@@ -56,6 +57,7 @@
             localStorage.setItem('data', JSON.stringify(data))
             displayTodo()
           }
+          li.appendChild(checkbox)
           li.appendChild(span);
           li.appendChild(editBtn)
           li.appendChild(delBtn)
