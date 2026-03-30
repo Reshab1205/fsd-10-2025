@@ -26,7 +26,6 @@
           return;
         }
         data.push(todo);
-        console.log(data)
         localStorage.setItem("data", JSON.stringify(data));
         document.getElementById("inp").value = "";
         displayTodo();
@@ -34,23 +33,30 @@
       }
       
       function displayTodo() {
-        const todoData = JSON.parse(localStorage.getItem("data")) || [];
         const ul = document.getElementById("El");
-        const editBtn = document.createElement('button')
-        editBtn.textContent = 'Edit'
-        const delBtn = document.createElement('button')
-        delBtn.textContent = 'Delete'
-        for (let i =0; i < todoData.length; i++) {
+        ul.innerHTML = ""
+        for (let i =0; i < data.length; i++) {
           const li = document.createElement("li"); 
-          ul.innerHTML = ""
-          li.textContent = todoData[i];
+          const span = document.createElement("span")
+          span.textContent = data[i]
+          const editBtn = document.createElement("button")
+          editBtn.textContent = 'Edit'
           editBtn.onclick = function () {
-            const newData = prompt('Enter new todo')
-            if(newData.trim() !== "") {
-              localStorage.setItem('data', )
+            const newData = prompt('Enter New Data', data[i])
+            if(newData !== "" && newData !== null) {
+              data[i] = newData
+              localStorage.setItem('data', JSON.stringify(data))
               displayTodo()
             }
           }
+          const delBtn = document.createElement("button")
+          delBtn.textContent = 'Delete'
+          delBtn.onclick = function () {
+            data.splice(i,1)
+            localStorage.setItem('data', JSON.stringify(data))
+            displayTodo()
+          }
+          li.appendChild(span);
           li.appendChild(editBtn)
           li.appendChild(delBtn)
           ul.appendChild(li);
