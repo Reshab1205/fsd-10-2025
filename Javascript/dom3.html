@@ -34,7 +34,18 @@
         for (let i =0; i < data.length; i++) {
           const checkbox = document.createElement('input')
           checkbox.type = 'checkbox'
-          // checkbox. 
+          checkbox.checked = data[i].completed
+          checkbox.onchange = function () {
+            data[i].completed = checkbox.checked
+            console.log(checkbox.checked)
+            if(checkbox.checked === true) {
+              span.style.textDecoration = 'line-through'
+            } else {
+              span.style.textDecoration = 'none'
+            }
+            localStorage.setItem('data', JSON.stringify(data))
+          }
+
           
 
           const li = document.createElement("li"); 
@@ -43,9 +54,13 @@
           const editBtn = document.createElement("button")
           editBtn.textContent = 'Edit'
           editBtn.onclick = function () {
-            const newData = prompt('Enter New Data', data[i])
+            if(data[i].completed === true) {
+              alert('Task cannot be edited.')
+              return
+            }
+            const newData = prompt('Enter New Data', data[i].todo)
             if(newData !== "" && newData !== null) {
-              data[i] = newData
+              data[i].todo = newData
               localStorage.setItem('data', JSON.stringify(data))
               displayTodo()
             }
