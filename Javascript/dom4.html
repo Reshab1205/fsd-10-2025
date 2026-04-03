@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img
+        id="img1"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLat8bZvhXD3ChSXyzGsFVh6qgplm1KhYPKA&s"
+      />
+    </div>
+    <div id="d1"></div>
+    <button onclick="displayPara()">DisplayPara</button>
+    <button id="btn" onclick="showImg()">HideImg</button>
+    <ul>
+      
+    </ul>
+
+    <script>
+      function displayPara() {
+        const p = document.createElement("p");
+        p.textContent = "Hello World";
+        const pE = document.getElementById("d1");
+        pE.appendChild(p);
+      }
+
+      function showImg() {
+        const img = document.getElementById("img1");
+        // img.style.display = 'none'
+        if (
+          img.src ===
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLat8bZvhXD3ChSXyzGsFVh6qgplm1KhYPKA&s"
+        ) {
+          img.src = "";
+          document.getElementById("btn").textContent = "ShowImg";
+        } else {
+          img.src =
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLat8bZvhXD3ChSXyzGsFVh6qgplm1KhYPKA&s";
+          document.getElementById("btn").textContent = "HideImg";
+        }
+        //    console.log(img.src)
+        // if (img.style.display === "none") {
+        //   document.getElementById("img1").style.display = "none";
+        // } else {
+        //     document.getElementById("img1").src === "inline"
+        // }
+      }
+    </script>
+  </body>
+</html>
