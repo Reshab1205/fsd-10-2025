@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="form">
+      <form onsubmit="register(event)">
+        <input id="name" type="text" placeholder="Enter Your Name" required/>
+        <input id="email" type="text" placeholder="Enter Your Email" required/>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter Your Password"
+          required
+        />
+        <input id="city" type="text" placeholder="Enter Your City" />
+        <input
+          id="mob_number"
+          type="number"
+          placeholder="Enter Your Contact Number"
+          required
+        />
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    
+    <div id="data"></div>
+    
+    <script>
+      function register(event) {
+        event.preventDefault()
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let city = document.getElementById("city").value;
+        let mob_number = document.getElementById("mob_number").value;
+
+
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        console.log(emailRegex.test(email))
+        const mobileRegex = /^[6-9]\d{9}$/
+        console.log(mobileRegex.test(mob_number))
+
+        // if()
+
+        const result = document.createElement("div")
+        result.innerHTML = `
+        <div>
+        <h3>Name: ${name}</h3>
+        <p>Email: ${email}</p>
+        <p>City: ${city}</p>
+        <p>Contact: ${mob_number}</p>
+        </div>
+        `
+        const pE = document.getElementById('data');
+        pE.appendChild(result)
+        
+        document.getElementById("name").value = '';
+        document.getElementById("email").value = '';
+        document.getElementById("password").value = '';
+        document.getElementById("city").value = '';
+        document.getElementById("mob_number").value = ''
+      }
+    </script>
+  </body>
+</html>

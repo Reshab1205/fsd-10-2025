@@ -134,3 +134,74 @@ new Error
 // }
 
 // add()
+
+
+// const fname = 'Reshab Kumar'
+// const bioData = {
+//     fname: "Reshab",
+//     lname: "Kumar",
+//     age:28,
+//     city:"Bhopal",
+//     air:29
+// }
+
+// function checkProperty(p) {    
+//     for( let i in bioData) {
+//         if(i === p) {
+//             console.log('true')
+//             return
+//         } 
+//     }
+//     console.log('false')
+// }
+
+// checkProperty('age')
+// checkProperty('state')
+
+// Object.keys(bioData) 
+
+// console.log(Object.entries(bioData))
+
+// let count = 0
+
+// for(let i in bioData) {
+//         count++   
+// }
+
+// console.log(count)
+
+// delete bioData.age
+// console.log(bioData)
+
+
+// bioData.age = 30
+// bioData[age]
+// bioData['age'] = 30
+// console.log(bioData)
+
+// console.log(Object.keys(bioData))
+
+// for(let i in bioData) {
+//     console.log(typeof i)
+// }
+
+// console.log(bioData.age)
+// const arr = [["fname","Reshab"], "Kumar", 28, "Bhopal", 29]
+// console.log(typeof obj)
+
+// const arr1 = [1,2,[3,4],5,6,[7,8,[11,12]],9,10]
+// const result = arr1.flat(Infinity)
+// console.log(result)
+
+// [1,2,3,4,5,6,7,8,9,10]
+
+// console.log('Hello')
+// setTimeout(() => {
+//     console.log('Hiii')
+// })
+// Promise.resolve().then(console.log('Bye'))
+// Promise.reject().catch(console.log('Error'))
+// console.log('Finish')
+// async / await 
+
+
