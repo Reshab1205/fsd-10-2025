@@ -49,29 +49,31 @@
 
 
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        console.log(emailRegex.test(email))
         const mobileRegex = /^[6-9]\d{9}$/
-        console.log(mobileRegex.test(mob_number))
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 
-        // if()
-
-        const result = document.createElement("div")
-        result.innerHTML = `
-        <div>
-        <h3>Name: ${name}</h3>
-        <p>Email: ${email}</p>
-        <p>City: ${city}</p>
-        <p>Contact: ${mob_number}</p>
-        </div>
-        `
-        const pE = document.getElementById('data');
-        pE.appendChild(result)
-        
-        document.getElementById("name").value = '';
-        document.getElementById("email").value = '';
-        document.getElementById("password").value = '';
-        document.getElementById("city").value = '';
-        document.getElementById("mob_number").value = ''
+        if(emailRegex.test(email) && mobileRegex.test(mob_number) && passwordRegex.test(password)) {
+          const result = document.createElement("div")
+          result.innerHTML = `
+          <div>
+            <h3>Name: ${name}</h3>
+            <p>Email: ${email}</p>
+            <p>City: ${city}</p>
+            <p>Contact: ${mob_number}</p>
+            </div>
+            `
+            const pE = document.getElementById('data');
+            pE.appendChild(result)
+            
+          } else {
+            alert('Enter correct Details')
+            return
+          }
+          document.getElementById("name").value = '';
+          document.getElementById("email").value = '';
+          document.getElementById("password").value = '';
+          document.getElementById("city").value = '';
+          document.getElementById("mob_number").value = ''
       }
     </script>
   </body>
