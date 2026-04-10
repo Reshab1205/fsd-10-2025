@@ -62,32 +62,118 @@
 
 // call apply bind
 
-const data = {
-  fname: "Reshab",
-  greet: function (age) {
-    console.log("My Name is " + this.fname + " and my age is " +  age);
-  },
-};
-const user = [
-  { fname: "Ravi", age: 28 },
-  { fname: "Baibhav", age: 27 },
-  { fname: "Shubham", age: 29 },
-  { fname: "Avinash", age: 28 },
-];
+// const data = {
+//   fname: "Reshab",
+//   greet: function (age) {
+//     console.log("My Name is " + this.fname + " and my age is " +  age);
+//   },
+// };
+// const user = [
+//   { fname: "Ravi", age: 28 },
+//   { fname: "Baibhav", age: 27 },
+//   { fname: "Shubham", age: 29 },
+//   { fname: "Avinash", age: 28 },
+// ];
 
-const user1 = { fname: "Ravi"}
+// const user1 = { fname: "Ravi"}
 
 // data.greet.apply(user1, [28, "Vaishali", true])
 // const result = data.greet.bind(user1, [28, "Vaishali", true])
 // result()
 
 // for(let i of user) {
-//     // console.log(i)
-//     // data.greet.apply(i);
+//     console.log(i)
+//     data.greet.apply(i);
 //    const result =  data.greet.bind(i)
+//    console.log(typeof result)
 //    result()
 // }
 
-for( let i of user) {
-    data.greet.apply(i, [i.age])
+// function add() {
+
+// }
+
+// () => {}
+
+// const app = function () {
+//   return true
+// }
+// console.log(app())
+
+// for( let i of user) {
+//     data.greet.apply(i, [i.age])
+// }
+
+// const btn = document.querySelectorAll('button')
+// btn.addEventListener('click', () => {})
+
+// const num = '100%10';
+// console.log(eval(num))
+
+
+// const x = Promise.reject("Hello");
+// const success = false;
+
+// if(success === true) 
+//   x.then((data) => console.log(data))
+// .catch((err) => console.log(err))
+// console.log(first)
+// function dbConnect(url) {
+//   Promise.resolve(mongoose.connect(url))
+//   .then(() => console.log('Db connected'))
+//   .catch(() => console.log('Db not connected'))
+  
+// }
+// dbConnect()
+// console.log(first)
+
+// function add(a,b) {
+//     console.log(a+b)
+// }
+
+// setInterval(() => {
+//     add(2,5)
+// })
+// setTimeout(() => {
+//     console.log('Hii')
+// })
+// console.log('Hello')
+
+
+// function greet(callback) {
+//     console.log('Hello')
+//     callback()
+//     // fname()
+// }
+
+// function fname() {
+//     console.log('Reshab')
+// }
+
+// function fname1() {
+//     console.log('Ravi')
+// }
+
+// greet(fname)
+// greet(fname1)
+
+
+
+function sendMsg(name, callback) {
+    console.log(`Sending msg to ${name}`)
+    callback(name)
 }
+
+function sendNewYearGreeting(name) {
+    console.log(`Happy New Year ${name}`)
+}
+
+const arr = ["Reshab", "Ravi", "Shubham", "Baibhav", "Avinash"]
+for(let i of arr) {
+    sendMsg(i, sendNewYearGreeting)
+}
+
+
+
+
+
