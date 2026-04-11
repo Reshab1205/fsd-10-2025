@@ -155,23 +155,81 @@
 // }
 
 // greet(fname)
-// greet(fname1)
+// truegreet(fname1)
 
 
 
-function sendMsg(name, callback) {
-    console.log(`Sending msg to ${name}`)
-    callback(name)
+// function sendMsg(name, callback) {
+//     console.log(`Sending msg to ${name}`)
+//     callback(name)
+// }
+
+// function sendNewYearGreeting(name) {
+//     console.log(`Happy New Year ${name}`)
+// }
+
+// const arr = ["Reshab", "Ravi", "Shubham", "Baibhav", "Avinash"]
+// for(let i of arr) {
+//     sendMsg(i, sendNewYearGreeting)
+// }
+
+// function getSender() {
+//     console.log('Sender')
+// }
+
+// function verifySender() {
+//     console.log('Verify Sender')
+// }
+
+
+// function getReceiver() {
+//     console.log('Reshab')
+// }
+
+// function sendMoney() {
+//     getSender()
+//     getReceiver()
+//     verifySender()
+//     console.log('Money sent')
+// }
+
+// sendMoney()
+
+
+function verifyCardWithServer() {
+console.log('CARD server verification')
+return true
+}
+const token = 'TRSD'
+const amount = 15000
+function verifyCard() {
+    if(!token.trim()) {
+        return 'Card Invalid'
+    }
+    // if(verifyCardWithServer() === true) {
+    //     cashWithDrawl()
+    // }
+
+    
 }
 
-function sendNewYearGreeting(name) {
-    console.log(`Happy New Year ${name}`)
+function checkBalance(amount, callback) {
+    const fetchBankBalance = 10000
+    if(amount <= fetchBankBalance) {
+       callback()
+    } else {
+        console.log('Insufficient Balance') 
+    }
 }
 
-const arr = ["Reshab", "Ravi", "Shubham", "Baibhav", "Avinash"]
-for(let i of arr) {
-    sendMsg(i, sendNewYearGreeting)
+function cashWithDrawl () {
+    console.log('WithDrawl Successfull')
 }
+
+// checkBalance(amount, verifyCard)
+checkBalance(amount, cashWithDrawl)
+
+
 
 
 

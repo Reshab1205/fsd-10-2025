@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div">
+        <p>BOM <span>Browser Object Model</span></p>
+    </div>
+
+    <button onclick="change()" >Change Website</button>
+    <button onclick="findLocation()" >Change Website</button>
+    
+    <script>
+       
+            window.location.hostname = 'www.amazon.com'
+        
+
+        function findLocation() {
+            window.navigator.geolocation.getCurrentPosition(success)
+        }
+        let lat;
+        let lng;
+
+        function success(position) {
+            lat = position.coords.latitude
+            lng = position.coords.longitude
+        }
+        findLocation()
+        success()
+        // const apikey = '23a13401e6964d149835d8022a7fa787'
+        // const api = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`
+        // fetch(api).then((data) => console.log(data))
+        const h = window.innerHeight
+        const w = window.innerWidth
+        const div =  document.getElementById('div')
+        div.innerHTML = screen.pixelDepth
+        // console.log(window.screen.availHeight)
+
+    </script>
+</body>
+</html>
