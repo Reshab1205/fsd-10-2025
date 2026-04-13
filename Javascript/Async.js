@@ -196,38 +196,38 @@
 // sendMoney()
 
 
-function verifyCardWithServer() {
-console.log('CARD server verification')
-return true
-}
-const token = 'TRSD'
-const amount = 15000
-function verifyCard() {
-    if(!token.trim()) {
-        return 'Card Invalid'
-    }
-    // if(verifyCardWithServer() === true) {
-    //     cashWithDrawl()
-    // }
+// function verifyCardWithServer() {
+// console.log('CARD server verification')
+// return true
+// }
+// const token = 'TRSD'
+// const amount = 15000
+// function verifyCard() {
+//     if(!token.trim()) {
+//         return 'Card Invalid'
+//     }
+//     if(verifyCardWithServer() === true) {
+//         cashWithDrawl()
+//     }
 
     
-}
+// }
 
-function checkBalance(amount, callback) {
-    const fetchBankBalance = 10000
-    if(amount <= fetchBankBalance) {
-       callback()
-    } else {
-        console.log('Insufficient Balance') 
-    }
-}
+// function checkBalance(amount, callback) {
+//     const fetchBankBalance = 10000
+//     if(amount <= fetchBankBalance) {
+//        callback()
+//     } else {
+//         console.log('Insufficient Balance') 
+//     }
+// }
 
-function cashWithDrawl () {
-    console.log('WithDrawl Successfull')
-}
+// function cashWithDrawl () {
+//     console.log('WithDrawl Successfull')
+// }
 
 // checkBalance(amount, verifyCard)
-checkBalance(amount, cashWithDrawl)
+// checkBalance(amount, cashWithDrawl)
 
 
 
