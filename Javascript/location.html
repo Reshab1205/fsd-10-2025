@@ -1,19 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <div></div>
+  </head>
+  <body>
+    <div>
+      <button onclick="success()">Get Location</button>
+      <button onclick="success1()" >Get Weather</button>
+      <p id="demo"></p>
+    </div>
+
     <script>
-        window.navigator.geolocation.getCurrentPosition(success)
-        function success(position) {
-            console.log(position.coords.latitude)
-                        console.log(position.coords.longitude)
-        }
-        success()
+      let lat;
+      let lon;
+
+      function success(position) {
+        window.navigator.geolocation.getCurrentPosition(success);
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        getLocation(lat, lon);
+      }
+      function success1(position) {
+        window.navigator.geolocation.getCurrentPosition(success);
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        getWeather(lat, lon);
+      }
+
+      function getLocation(lat, lon) {
+        let apiKey = "23a13401e6964d149835d8022a7fa787";
+        const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`;
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => {
+            document.getElementById("demo").innerText =
+              data.results[0].formatted;
+          })
+          .catch((err) => {
+            document.getElementById("demo").innerText = err;
+          });
+      }
+
+      function getWeather(lat,lon) {
+        let APIkey = '6010abdb2e857568d280c8ef3fcec838';
+        let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`;
+        fetch(url)
+        .then((res) => res.json())
+        .then((data) => document.getElementById('demo').innerText = data.weather[0].description )
+        .catch((err) => document.getElementById('demo').innerText = err)
+      }
     </script>
-</body>
+  </body>
 </html>
