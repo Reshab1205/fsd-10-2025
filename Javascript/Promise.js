@@ -75,20 +75,20 @@
 // })
 // .then((data) => console.log(data))
 // .catch((err) => console.log(err))
-let lat = 23.23352524875869;
-let lon = 77.44076033565044;
-let APIkey = '6010abdb2e857568d280c8ef3fcec838';
-let url = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`);
+// let lat = 23.23352524875869;
+// let lon = 77.44076033565044;
+// let APIkey = '6010abdb2e857568d280c8ef3fcec838';
+// let url = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${APIkey}`);
 
-  url
-    .then((res) => {
-      if (!res.ok) {
-        console.log("HTTP Error");
-      }
-      return res.json();
-    })
-    .then((data) => console.log(data.weather[0].description))
-    .catch((err) => console.log(err));
+//   url
+//     .then((res) => {
+//       if (!res.ok) {
+//         console.log("HTTP Error");
+//       }
+//       return res.json();
+//     })
+//     .then((data) => console.log(data.weather[0].description))
+//     .catch((err) => console.log(err));
 
 // let apiKey = '23a13401e6964d149835d8022a7fa787'
 //     let url1 = fetch(`https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`);
@@ -122,3 +122,21 @@ let url = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=
 // }
 
 // getLocation(23.23352524875869,77.44076033565044)
+
+// const arr = {fnmae: 'Reshab'}
+
+
+// const str = 'Reshab'
+// str = 'Ravi'
+// console.log(str) //Ravi
+
+let lat = 23.23352524875869
+let lon = 77.44076033565044
+let apiKey = '23a13401e6964d149835d8022a7fa787'
+const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`
+
+fetch(url)
+.then((res)=> res.json())
+.then((data) => console.log(data.results[0].formatted))
+.catch((err) => console.log(err))
+
