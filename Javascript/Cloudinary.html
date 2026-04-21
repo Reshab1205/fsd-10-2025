@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="register(event)">
+        <input id="name" type="text" />
+        <input id="file" type="file" />
+        <button type="submit" >Register</button>
+    </form>
+
+    <script>
+        async function register(event) {
+            event.preventDefault()
+           const name =  document.getElementById('name').value
+           const file =  document.getElementById('file').files[0]
+
+           const url = 'https://api.cloudinary.com/v1_1/dbc1h4dym/upload'
+
+          const formData =  new FormData()
+          formData.append('upload_preset', 'chat-app')
+          formData.append('file', file)
+          try {
+            const res = await fetch(url, {
+                method:'POST',
+                body:formData
+            })
+           const data =  await res.json()
+        //    console.log(data.secure_url)
+
+           const user = {
+            name: name,
+            image: data.secure_url
+           }
+
+           localStorage.setItem('user', JSON.stringify(user))
+        //    console.log(user)
+          }catch(err) {
+            console.log(err)
+          }
+        //    console.log(file)
+
+        }
+    </script>
+</body>
+</html>

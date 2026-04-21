@@ -135,20 +135,22 @@ let lon = 77.44076033565044
 let apiKey = '23a13401e6964d149835d8022a7fa787'
 const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`
 
- async function  fetchLocation() {
+ async function fetchLocation() {
     try {
-       const data = await fetch(url)
-       console.log(data)  
+        const data = await fetch(url)
+        const result = await data.json()
+        console.log(result.results[0].formatted)
     } catch(err) {
         console.log(err)
     }
-    // .then((res)=> res.json())
-    // .then((data) => console.log(data.results[0].formatted))
-    // .catch((err) => console.log(err))  
+
 }
 
-// fetchLocation()
+fetchLocation()
 
+// .then((res)=> res.json())
+// .then((data) => console.log(data.results[0].formatted))
+// .catch((err) => console.log(err))  
 // Promise.resolve('Hello')
 // Promise.reject('Failed')
 
