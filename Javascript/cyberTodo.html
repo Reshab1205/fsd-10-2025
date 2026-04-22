@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Todo</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Courier New', monospace; }
+
+    body {
+      background:#05070d;
+      color:#00ffea;
+      display:flex; justify-content:center; align-items:center; height:100vh;
+      overflow:hidden;
+    }
+
+    /* MATRIX BACKGROUND */
+    canvas {
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:-1;
+    }
+
+    .container {
+      width:450px;
+      background:rgba(0,0,0,0.9);
+      border:1px solid #00ffea;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 0 30px #00ffea;
+    }
+
+    h1 {
+      text-align:center;
+      margin-bottom:10px;
+      color:#ff00ff;
+      animation:glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow:2px 0 red,-2px 0 blue; }
+      50% { text-shadow:-2px 0 red,2px 0 blue; }
+      100% { text-shadow:2px 0 red,-2px 0 blue; }
+    }
+
+    /* PROGRESS BAR */
+    .progress-container {
+      margin-bottom:10px;
+      background:#111;
+      border:1px solid #00ffea;
+      border-radius:6px;
+      overflow:hidden;
+    }
+
+    .progress-bar {
+      height:10px;
+      width:0%;
+      background:#00ffea;
+      transition:0.3s;
+    }
+
+    .progress-text {
+      text-align:center;
+      font-size:12px;
+      margin-bottom:10px;
+    }
+
+    .input-group { display:flex; gap:10px; margin-bottom:10px; }
+
+    input, select {
+      flex:1;
+      padding:8px;
+      background:#111;
+      border:1px solid #00ffea;
+      color:#00ffea;
+      border-radius:6px;
+    }
+
+    button {
+      padding:8px 12px;
+      background:#00ffea;
+      color:#000;
+      border:none;
+      border-radius:6px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    ul { list-style:none; margin-top:15px; }
+
+    li {
+      background:#111;
+      margin-bottom:10px;
+      padding:10px;
+      border-radius:6px;
+      display:flex;
+      flex-direction:column;
+      border-left:5px solid #00ffea;
+    }
+
+    .completed { text-decoration:line-through; opacity:0.5; }
+
+    .green { border-left-color:#00ff00; }
+    .yellow { border-left-color:#ffff00; }
+    .red { border-left-color:#ff0033; }
+
+    .filters { margin-top:10px; display:flex; gap:10px; }
+  </style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="container">
+  <h1>⚡ CYBER TODO ⚡</h1>
+
+  <div class="progress-text" id="progressText">0% Completed</div>
+  <div class="progress-container">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <div class="input-group">
+    <input type="text" id="taskInput" placeholder="Enter task..." />
+  </div>
+
+  <div class="input-group">
+    <input type="date" id="deadlineInput" />
+    <select id="categoryInput">
+      <option>Groceries</option>
+      <option>Homework</option>
+      <option>Meetings</option>
+      <option>Workout</option>
+      <option>Events</option>
+    </select>
+  </div>
+
+  <button onclick="addTask()">Add Task</button>
+
+  <div class="filters">
+    <select id="filterCategory" onchange="applyFilters()">
+      <option value="All">All Categories</option>
+      <option>Groceries</option>
+      <option>Homework</option>
+      <option>Meetings</option>
+      <option>Workout</option>
+      <option>Events</option>
+    </select>
+
+    <select id="filterStatus" onchange="applyFilters()">
+      <option value="All">All Status</option>
+      <option value="completed">Completed</option>
+      <option value="pending">Pending</option>
+    </select>
+  </div>
+
+  <ul id="taskList"></ul>
+</div>
+
+<script>
+  function getStatusColor(deadline) {
+    const today = new Date();
+    const due = new Date(deadline);
+    const diff = (due - today) / (1000*60*60*24);
+    if (diff <= 1) return 'red';
+    if (diff <= 3) return 'yellow';
+    return 'green';
+  }
+
+  function updateProgress() {
+    const tasks = document.querySelectorAll('#taskList li');
+    const total = tasks.length;
+    const completed = document.querySelectorAll('#taskList li.completed').length;
+
+    const percent = total === 0 ? 0 : Math.round((completed/total)*100);
+
+    document.getElementById('progressBar').style.width = percent + '%';
+    document.getElementById('progressText').innerText = percent + '% Completed';
+  }
+
+  function addTask() {
+    const task = document.getElementById('taskInput').value.trim();
+    const deadline = document.getElementById('deadlineInput').value;
+    const category = document.getElementById('categoryInput').value;
+
+    if (!task || !deadline) return alert('Enter task & deadline');
+
+    const li = document.createElement('li');
+    li.dataset.category = category;
+    li.classList.add(getStatusColor(deadline));
+
+    li.innerHTML = `
+      <span>${task} (${category})</span>
+      <small>Deadline: ${deadline}</small>
+      <div>
+        <button onclick="toggleComplete(this)">✔</button>
+        <button onclick="deleteTask(this)">✖</button>
+      </div>
+    `;
+
+    document.getElementById('taskList').appendChild(li);
+
+    document.getElementById('taskInput').value='';
+    document.getElementById('deadlineInput').value='';
+
+    updateProgress();
+  }
+
+  function toggleComplete(btn) {
+    const li = btn.closest('li');
+    li.classList.toggle('completed');
+    updateProgress();
+    applyFilters();
+  }
+
+  function deleteTask(btn) {
+    btn.closest('li').remove();
+    updateProgress();
+  }
+
+  function applyFilters() {
+    const cat = document.getElementById('filterCategory').value;
+    const status = document.getElementById('filterStatus').value;
+
+    document.querySelectorAll('#taskList li').forEach(task=>{
+      const matchCat = cat==='All'||task.dataset.category===cat;
+      const isCompleted = task.classList.contains('completed');
+      const matchStatus = status==='All'||(status==='completed'&&isCompleted)||(status==='pending'&&!isCompleted);
+
+      task.style.display = (matchCat && matchStatus) ? 'block':'none';
+    });
+  }
+
+  /* MATRIX EFFECT */
+  const canvas = document.getElementById('matrix');
+  const ctx = canvas.getContext('2d');
+
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+
+  const letters = 'ab';
+  const fontSize = 14;
+  const columns = canvas.width / fontSize;
+  const drops = [];
+
+  for(let i=0;i<columns;i++) drops[i]=1;
+
+  function draw(){
+    ctx.fillStyle = 'rgba(0,0,0,0.05)';
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle = '#00ffea';
+    ctx.font = fontSize+'px monospace';
+
+    for(let i=0;i<drops.length;i++){
+      const text = letters.charAt(Math.floor(Math.random()*letters.length));
+      ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+
+      if(drops[i]*fontSize>canvas.height && Math.random()>0.975)
+        drops[i]=0;
+
+      drops[i]++;
+    }
+  }
+
+  setInterval(draw,50);
+</script>
+
+</body>
+</html>

@@ -103,14 +103,12 @@
 //     .then((data) => console.log(data.results[0].formatted))
 //     .catch((err) => console.log(err));
 
-
 // Promise.all([
 //     data,
 //     url
 // ])
 // .then((result) => console.log(result))
 // .catch((err) => console.log(err))
-
 
 // function getLocation(lat, lon) {
 //   let apiKey = '23a13401e6964d149835d8022a7fa787'
@@ -125,32 +123,31 @@
 
 // const arr = {fnmae: 'Reshab'}
 
-
 // const str = 'Reshab'
 // str = 'Ravi'
 // console.log(str) //Ravi
 
-let lat = 23.23352524875869
-let lon = 77.44076033565044
-let apiKey = '23a13401e6964d149835d8022a7fa787'
-const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`
+// let lat = 23.23352524875869
+// let lon = 77.44076033565044
+// let apiKey = '23a13401e6964d149835d8022a7fa787'
+// const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lon}&key=${apiKey}`
 
- async function fetchLocation() {
-    try {
-        const data = await fetch(url)
-        const result = await data.json()
-        console.log(result.results[0].formatted)
-    } catch(err) {
-        console.log(err)
-    }
+//  async function fetchLocation() {
+//     try {
+//         const data = await fetch(url)
+//         const result = await data.json()
+//         console.log(result.results[0].formatted)
+//     } catch(err) {
+//         console.log(err)
+//     }
 
-}
+// }
 
-fetchLocation()
+// fetchLocation()
 
 // .then((res)=> res.json())
 // .then((data) => console.log(data.results[0].formatted))
-// .catch((err) => console.log(err))  
+// .catch((err) => console.log(err))
 // Promise.resolve('Hello')
 // Promise.reject('Failed')
 
@@ -158,9 +155,8 @@ fetchLocation()
 
 // })
 
-// XML 
-// ajax or jquery 
-
+// XML
+// ajax or jquery
 
 // const arr = [1,2,3,4,5]
 // const arr1 = [6,7,8,9,10]
@@ -178,3 +174,15 @@ fetchLocation()
 //     console.log(i)
 // }
 
+const products = [
+  { id: 1, product_name: "Nike Shoes", product_price: 7999 },
+  { id: 2, product_name: "Nike Shoes", product_price: 7999 },
+  { id: 3, product_name: "Nike Shoes", product_price: 7999 },
+  { id: 4, product_name: "Nike Shoes", product_price: 7999 },
+  { id: 5, product_name: "Nike Shoes", product_price: 7999 },
+  { id: 6, product_name: "Nike Shoes", product_price: 7999 },
+  { id: 7, product_name: "Nike Shoes", product_price: 7999 },
+  { id: 8, product_name: "Nike Shoes", product_price: 7999 },
+  { id: 9, product_name: "Nike Shoes", product_price: 7999 },
+  { id: 10, product_name: "Nike Shoes", product_price: 7999 },
+];
