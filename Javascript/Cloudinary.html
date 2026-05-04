@@ -17,26 +17,28 @@
             event.preventDefault()
            const name =  document.getElementById('name').value
            const file =  document.getElementById('file').files[0]
+        //    console.log(file)
 
            const url = 'https://api.cloudinary.com/v1_1/dbc1h4dym/upload'
 
           const formData =  new FormData()
-          formData.append('upload_preset', 'chat-app')
+          formData.append('upload_preset', 'my_data')
           formData.append('file', file)
+
+        //   console.log(formData.upload_preset)
+
           try {
             const res = await fetch(url, {
                 method:'POST',
                 body:formData
             })
+        //     console.log(res)
            const data =  await res.json()
         //    console.log(data.secure_url)
-
            const user = {
             name: name,
             image: data.secure_url
            }
-           
-
            localStorage.setItem('user', JSON.stringify(user))
         //    console.log(user)
           }catch(err) {

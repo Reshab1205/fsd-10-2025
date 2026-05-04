@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo">Hello</p>
+    <script>
+        // console.log(document.getElementById('demo').textContent = 'Bye')
+        // console.log(window.screen.availWidth)
+        // console.log(window.location.hostname)
+        window.navigator.geolocation.getCurrentPosition(x)
+        // const d = 12
+        function x(p) {
+            console.log('lat',p.coords.latitude)
+            const a = p.coords.latitude
+            return a
+            // console.log('lon',p.coords.longitude)
+        }
+       const d =  x()
+       console.log('d', d)
+        // window
+        </script>
+</body>
+</html>

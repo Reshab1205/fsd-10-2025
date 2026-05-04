@@ -62,12 +62,14 @@
 
 // call apply bind
 
-// const data = {
-//   fname: "Reshab",
-//   greet: function (age) {
-//     console.log("My Name is " + this.fname + " and my age is " +  age);
-//   },
-// };
+const data = {
+  fname: "Reshab",
+  greet: function (age) {
+    console.log("My Name is " + this.fname + " and my age is " +  age);
+  },
+};
+// const a = 'Ravi'
+data.greet.call({fname: "Ravi"}, 28)
 // const user = [
 //   { fname: "Ravi", age: 28 },
 //   { fname: "Baibhav", age: 27 },
